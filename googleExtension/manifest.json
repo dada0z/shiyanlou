@@ -1,0 +1,11 @@
+{
+	"manifest_version": 2,
+	"name": "Google_Time",
+	"description": "Life is short, I use Python",
+	"version": "1.0",
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_title": "Learning by doing",
+		"default_popup": "popup.html"
+	}
+}

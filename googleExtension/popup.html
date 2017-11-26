@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoapp">
+<head>
+	<meta charset="UTF-8">
+	<title>Learning by doing</title>
+
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.min.css">
+</head>
+<body>
+	<div syyle="background-color: #dcdcdc;width: 373px;">
+		<img src="./images/logo.png" alt="">
+		<button class="btn btn-success">Learning by doing</button>
+	</div>
+
+	<div>
+		<object>
+			<embed src="./time.swf" width="373px;" height="150px;" align="center" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>
+		</object>
+	</div>
+
+	<div class="" style="width: 373px;">
+		<section ng-controller="todolistcontroller">
+			<form class="input-group input-group-lg">
+				<input ng-model="text" type="text" class="form-control">
+				<span class="input-group-btn">
+					<button class="btn btn-success" ng-click="add()">Add</button>
+				</span>
+			</form>
+
+			<ul class="list-group">
+				<li ng-repeat="item in todolist" ng-class="{ 'done': item.done}" class="list-group-item">
+					<button ng-click="delete(item)" class="close" aria-label="close">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only"> Close </span>
+					</button>
+
+					<div class="checkbox">
+						<label>
+							<input ng-model="item.done" type="checkbox">
+							<span>{{item.text}}</span>
+						</label>
+					</div>
+				</li>
+			</ul>
+
+			<p>
+				总共<strong>{{todolist.length}}</strong>个任务，已完成<strong>{{doneCount()}}</strong>个
+			</p>
+		</section>
+	</div>
+
+	<script type="text/javascript" src="./js/angular.min.js"></script>
+	<script type="text/javascript" src="./js/todolist.js"></script>
+
+</body>
+</html>
